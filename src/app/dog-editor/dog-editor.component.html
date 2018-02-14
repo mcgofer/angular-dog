@@ -4,17 +4,20 @@
 <div class="inputs">
     <h3>Add a New Dog:</h3>
     <label>Name:
-      <input type="text" [(ngModel)]="dogName" placeholder="Enter name">
+      <input type="text" [(ngModel)]="dog.name" placeholder="Enter name">
     </label>
     <br>
     <label>Weight:
-      <input type="text" [(ngModel)]="dogWeight" placeholder="Enter weight">
+      <input type="text" [(ngModel)]="dog.weight" placeholder="Enter weight">
     </label>
-    <span *ngIf="dogWeight < 10" [ngClass]="{'warning' : dogWeight < 5, 'message': true}">{{dogName}} is underweight!</span><br>
+    <span *ngIf="dog.weight < 10" [ngClass]="{'warning' : dog.weight < 5, 'message': true}">{{dog.name}} is underweight!</span><br>
     <label>D/O/B:
-    <input type="date" [(ngModel)]="birthDate" placeholder="Enter birthdate">
+    <input type="date" [(ngModel)]="dog.birthDate" placeholder="Enter birthdate">
     </label>
-    <br><button class="add-dog" type="button" (click)="addDog()">Add Dog</button>
+    <br>
+    <button *ngIf="!dog.id" (click)="addDog()">add</button>
+    <button *ngIf="dog.id" (click)="editDog(dog)">edit</button>
+    <button *ngIf="dog.id" (click)="clearDog()">cancel</button>
   </div>
 </div>
 </div>

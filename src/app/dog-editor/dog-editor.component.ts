@@ -10,25 +10,22 @@ import { DogService } from '../dog.service';
 })
 
 export class DogEditorComponent implements OnInit {
-  dogName: string;
-  dogWeight: number;
-  dateType: string;
-  birthDate: Date;
+  @Input() dog: Dog = new Dog();
   constructor(private dogService: DogService) { }
 
   ngOnInit() {
   }
 
   addDog() {
-  let newDog = new Dog();
-  newDog.name = this.dogName;
-  newDog.weight = this.dogWeight;
-  newDog.birthDate = this.birthDate;
-  this.dogService.addDog(newDog);
+  this.dogService.addDog(this.dog);
   }
 
-  editDog(dog) {
-    console.log(dog.name + ' edited');
+  editDog(dog: Dog) {
+    this.dogService.editDog(this.dog.id, this.dog);
+  }
+
+  clearDog() {
+    this.dog = new Dog();
   }
 
 }

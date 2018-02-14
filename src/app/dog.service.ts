@@ -9,11 +9,10 @@ const DOGS: Dog[] = [
   {id: 5, name: 'Prince', weight: 65, birthDate: new Date(2017, 5, 4), dateType: 'fullDate'}
 ];
 
-
-
 @Injectable()
 export class DogService {
 dogs: Array<Dog> = DOGS;
+selectedDogs: Dog;
 
   constructor() { }
 
@@ -24,35 +23,18 @@ dogs: Array<Dog> = DOGS;
   addDog(newDog: Dog) {
     newDog.id = this.generateId();
     this.dogs.push(newDog);
-    console.log(newDog);
 }
 
-generateId (): number {
-  return this.dogs[this.dogs.length - 1].id + 1;
+  generateId (): number {
+    return this.dogs[this.dogs.length - 1].id + 1;
+}
+
+  editDog(id: Number, dog: Dog) {
+    let updateDogIndex = this.dogs.findIndex((dog) => dog.id == id);
+    this.dogs[updateDogIndex] = dog;
 }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

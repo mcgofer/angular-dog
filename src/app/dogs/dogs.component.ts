@@ -13,6 +13,7 @@ export class DogsComponent implements OnInit {
   dogs: any[];
   title: string;
   toggle = true;
+  selectedDog: Dog = new Dog();
   // deleteDog = this.dogService.deleteDog;
   constructor(private dogService: DogService) {}
 
@@ -35,35 +36,9 @@ deleteDog(dog) {
   console.log(this.dogs);
 }
 
+editDog(dog: Dog) {
+  this.selectedDog = Object.assign({}, dog);
+  console.log(dog);
+ }
+
 }
-
-
-
-
-
-
-
-
-
-
-// import { Component, OnInit } from '@angular/core';
-// import { DogService } from '../dog.service';
-// import { Dog } from './dog';
-
-
-// @Component({
-//   selector: 'app-dogs',
-//   templateUrl: './dogs.component.html',
-//   styleUrls: ['./dogs.component.css']
-// })
-// export class DogsComponent implements OnInit {
-//   dogs: any[];
-//   title: string;
-//   constructor(private dogService: DogService) { }
-
-//   ngOnInit() {
-//   	this.title = "Our dogs";
-//   	this.dogs = this.dogService.getDogs();
-//   }
-
-// }
