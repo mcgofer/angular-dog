@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt');
+
+body {
+    background: url('https://images.pexels.com/photos/825949/pexels-photo-825949.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');
+    background-size: cover;
+    width: auto;
+    height: 100%;
+    background-repeat: no-repeat;
+}

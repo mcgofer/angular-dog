@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-8">
+<div class="inputs">
+    <h3>Add a New Dog:</h3>
+    <label>Name:
+      <input type="text" [(ngModel)]="dogName" placeholder="Enter name">
+    </label>
+    <br>
+    <label>Weight:
+      <input type="text" [(ngModel)]="dogWeight" placeholder="Enter weight">
+    </label>
+    <span *ngIf="dogWeight < 10" [ngClass]="{'warning' : dogWeight < 5, 'message': true}">{{dogName}} is underweight!</span><br>
+    <label>D/O/B:
+    <input type="date" [(ngModel)]="birthDate" placeholder="Enter birthdate">
+    </label>
+    <br><button class="add-dog" type="button" (click)="addDog()">Add Dog</button>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+
+<!-- <h3>Add a new dog </h3>
+<div class="center-align">
+
+      <div>
+        <label>Name:
+          <input type="text" [(ngModel)]="dogName" placeholder="Name" />
+        </label>
+        <label>Weight:
+          <input type="text" [(ngModel)]="dogWeight" placeholder="Weight" />
+        </label>
+        <label>Birthday:
+          <input type="date" [(ngModel)]="birthDate" placeholder="Birthday" />
+        </label>
+        <input type="button" name="btnAddDog" (click)="addDog()" value="Add dog" />
+      </div>
+
+      <span *ngIf="dogWeight < 10" [ngClass]="{'warning' : dogWeight < 5, 'message': true }">{{dogName}} is underweight</span>
+
+      </div> -->
