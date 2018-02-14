@@ -5,4 +5,5 @@ export class Dog {
   birthDate: Date;
   dateType: string;
   selectedDog: string;
+  lastUpdated: string;
 }

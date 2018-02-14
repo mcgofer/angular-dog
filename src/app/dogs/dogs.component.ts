@@ -14,7 +14,8 @@ export class DogsComponent implements OnInit {
   title: string;
   toggle = true;
   selectedDog: Dog = new Dog();
-  // deleteDog = this.dogService.deleteDog;
+  lastUpdated: string = '';
+
   constructor(private dogService: DogService) {}
 
   ngOnInit() {
@@ -22,7 +23,7 @@ export class DogsComponent implements OnInit {
     this.dogs = this.dogService.getDogs();
   }
 
-get format() {return this.toggle ?  'fullDate' : 'shortDate'; }
+  get format() {return this.toggle ?  'fullDate' : 'shortDate'; }
 
 toggleDate(dog) {
   if (dog.dateType === 'shortDate') {
@@ -40,5 +41,9 @@ editDog(dog: Dog) {
   this.selectedDog = Object.assign({}, dog);
   console.log(dog);
  }
+
+ addLastUpdated(dog) {
+  this.lastUpdated = 'Last dog added: ' + new Date().toString() + ', name: ' + dog.name;
+}
 
 }

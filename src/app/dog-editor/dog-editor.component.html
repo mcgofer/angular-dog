@@ -15,9 +15,9 @@
     <input type="date" [(ngModel)]="dog.birthDate" placeholder="Enter birthdate">
     </label>
     <br>
-    <button *ngIf="!dog.id" (click)="addDog()">add</button>
-    <button *ngIf="dog.id" (click)="editDog(dog)">edit</button>
-    <button *ngIf="dog.id" (click)="clearDog()">cancel</button>
+    <button *ngIf="!dog.id" (click)="addDog()" style="border-radius: 5px; outline: none;background-color: rgb(137, 168, 179);">add</button>
+    <button *ngIf="dog.id" (click)="editDog(dog)" style="border-radius: 5px; outline: none;background-color: rgb(137, 168, 179);">edit</button>
+    <button *ngIf="dog.id" (click)="clearDog()" style="border-radius: 5px; outline: none;background-color: rgb(137, 168, 179);">cancel</button>
   </div>
 </div>
 </div>

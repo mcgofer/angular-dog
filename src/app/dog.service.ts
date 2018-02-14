@@ -14,6 +14,7 @@ export class DogService {
 dogs: Array<Dog> = DOGS;
 selectedDogs: Dog;
 
+
   constructor() { }
 
   getDogs(): Array<Dog> {
