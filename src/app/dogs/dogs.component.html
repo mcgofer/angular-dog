@@ -4,10 +4,13 @@
 <h4 *ngIf="lastUpdated.length > 0">{{ lastUpdated }}</h4>
 <div class="display-dogs">
   <ul style="list-style: none;">
-      <li *ngFor="let dog of dogs; let i =index">{{i + 1}}.  {{dog.name | uppercase}} - {{dog.weight}}kgs - Born on {{dog.birthDate | date: dog.dateType }}
+      <li *ngFor="let dog of dogs; let i =index" [ngClass]="{'message' : dog.wasEdited === true}">{{i + 1}}.  {{dog.name | uppercase}} - {{dog.weight}}kgs - Born on {{dog.birthDate | date: dog.dateType }}
         <button style="border-radius: 50%; outline: none; background-color: lightblue;"(click)="toggleDate(dog)">{{ (dog.dateType === "fullDate" ? '-' : '+')}}</button>
         <button *ngIf="!dog.i" style="border-radius: 5px; outline: none;background-color: rgb(137, 168, 179);" (click)="editDog(dog)">edit</button>
         <button style="border-radius: 5px; outline: none;background-color: rgb(137, 168, 179);" (click)="deleteDog(i)">delete</button>
       </li>
   </ul>
   </div>
+
+
+  <!-- <span *ngIf="dog.wasEdited">updated just now!</span><br> -->

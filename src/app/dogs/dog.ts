@@ -4,6 +4,7 @@ export class Dog {
   weight: number;
   birthDate: Date;
   dateType: string;
-  selectedDog: string;
-  lastUpdated: string;
+  // selectedDog: string;
+  // lastUpdated: string;
+  wasEdited: boolean;
 }

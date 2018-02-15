@@ -24,51 +24,15 @@ export class DogEditorComponent implements OnInit {
 
   editDog(dog: Dog) {
     this.dogService.editDog(this.dog.id, this.dog);
+    this.dog.wasEdited = true;
   }
 
   clearDog() {
     this.dog = new Dog();
   }
 
-  addLastUpdated(dog) {
-    this.addLastUpdated = 'Last dog added: ' + new Date().toString() + ', name: ' + dog.name;
-  }
-
+  // addLastUpdated(dog) {
+  //   this.doglastUpdated = 'Last dog added: ' + new Date().toString() + ', name: ' + dog.name;
+  // }
 
 }
-
-
-
-
-
-// import { Component, OnInit } from '@angular/core';
-
-// import { Dog } from '../dogs/dog';
-// import { DogService } from '../dog.service';
-
-// @Component({
-//   selector: 'app-dog-editor',
-//   templateUrl: './dog-editor.component.html',
-//   styleUrls: ['./dog-editor.component.css']
-// })
-// export class DogEditorComponent implements OnInit {
-//   dogName: string;
-//   dogWeight: number;
-//   dogBirthDate: Date;
-//   constructor(private dogService: DogService) { }
-
-//   ngOnInit() {
-
-//   }
-
-
-//   addDog(){
-//   	let newDog = new Dog()
-//   	newDog.name = this.dogName;
-//   	newDog.weight = this.dogWeight;
-//   	newDog.birthDate = this.dogBirthDate;
-
-//   	this.dogService.addDog(newDog);
-//   }
-
-// }
